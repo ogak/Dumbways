@@ -8,12 +8,12 @@
 
 
 **Update and upgrade sistem operasi**
-1. Login ke app-server
-2. Update dan upgrade system ```sudo apt update & sudo apt upgrade -y```
+1. Login ke app-server.
+2. Update dan upgrade system ```sudo apt update & sudo apt upgrade -y```. 
 ![Server for application](screenshot/gambar0.jpg)
 
 **Install Node JS versi 10.x**
-1. Install NVM untuk management NodeJS version ```wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash```.
+1. Install NVM untuk management NodeJS version ```wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.0/install.sh | bash```. <br />
 ![Server for application](screenshot/gambar1.jpg)
 2. Install nodejs versi 10.xx, ```nvm install 10``` kemudian ```nvm use 10```.
 ![Server for application](screenshot/gambar2.jpg)
