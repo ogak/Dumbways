@@ -12,5 +12,5 @@
 5. Buat folder ``dumbplay`` untuk menyimpan file konfigurasi.
 ![Reverse Proxy](screenshot/gambar1.jpg).
 6. Masuk ke dalam folder ``dumbplay``.
-7. Buat file konfigurasi ```nano dumbplay-config``` kemudian buat reverse proxy yang mengarah ke apps.
+7. Buat file konfigurasi ```nano dumbplay-config``` kemudian buat reverse proxy port 3000 ke port 80.
 ![Reverse Proxy](screenshot/gambar2.jpg).
