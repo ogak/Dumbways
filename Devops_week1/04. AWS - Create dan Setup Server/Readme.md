@@ -33,7 +33,7 @@
 1. Masuk ke Elastic IPs yang terletak pada sidebar console bagian Network & Security.
 2. Kemudian Allocated Elastic IP address, AWS akan mengalokasikan sebuah IP yang dapat digunakan.
 ![Create a server](screenshot/gambar2c.jpg)
-3. Beri nama kemudian associate elastic ip address dengan server proxy server.
+3. Beri nama kemudian associate elastic ip address dengan server yang dituju.
 ![Create a server](screenshot/gambar2d.jpg)
 4. Masuk ke instance kemudian refresh Instances.
 ![Create a server](screenshot/gambar2e.jpg)
