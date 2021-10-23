@@ -60,6 +60,6 @@
 10. Gunakan key pair yang sama pada server reverse proxy.
 11. Launch instance.
 12. Allocate Elastic IP untuk server apps.
-![Create a server](screenshot/gambar5.jpg)
-14. Akses server.
+![Create a server](screenshot/gambar5.jpg) .
+14. Akses server. 
 ![Create a server](screenshot/gambar7.jpg)
