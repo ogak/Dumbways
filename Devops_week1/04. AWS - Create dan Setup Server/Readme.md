@@ -61,5 +61,5 @@
 11. Launch instance.
 12. Allocate Elastic IP untuk server apps.
 ![Create a server](screenshot/gambar5.jpg) .
-14. Akses server. 
+14. Akses server. <br />
 ![Create a server](screenshot/gambar7.jpg)
