@@ -6,7 +6,7 @@ d93f1719af2f503c47bbf63f603d2233f03cb
 2. Pada bagian account klik my profile.
 3. Masuk ke halaman API tokens.
 ![SSL Configuration](screenshot/gambar0.jpg)
-4. Pada bagian Global API Key, klik view.
+4. Pada bagian Global API Key, klik view, muncul kotak dialog. <br />
 ![SSL Configuration](screenshot/gambar1.jpg)
 5. Masukkan password untuk mendapatkan key.
 6. Copy dan simpan api key.
