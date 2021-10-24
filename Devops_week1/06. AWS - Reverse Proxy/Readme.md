@@ -6,16 +6,16 @@
 
 1. Login ke server reverse proxy.
 2. Update dan upgrade sistem.
-![Reverse Proxy](screenshot/gambar0.jpg).
+![Reverse Proxy](screenshot/gambar0.jpg)
 3. Install nginx ``sudo apt install nginx``
 4. Masuk ke dalam folder nginx ``/etc/nginx``
 5. Buat folder ``dumbplay`` untuk menyimpan file konfigurasi.
-![Reverse Proxy](screenshot/gambar1.jpg).
+![Reverse Proxy](screenshot/gambar1.jpg)
 6. Masuk ke dalam folder ``dumbplay``.
 7. Buat file konfigurasi ```nano dumbplay-config``` kemudian buat reverse proxy port 3000 ke port 80.
-![Reverse Proxy](screenshot/gambar2.jpg).
+![Reverse Proxy](screenshot/gambar2.jpg)
 8. Kemudian include konfigurasi dumbplay tadi ke ``nginx.conf``, Save perubahan.
-![Reverse Proxy](screenshot/gambar3.jpg).
+![Reverse Proxy](screenshot/gambar3.jpg)
 9. Test konfigurasi file, ``sudo nginx -t``, untuk mengecek syntax pada konfigurasi apakah sudah ok.
 ![Reverse Proxy](screenshot/gambar4.jpg).
 10. Restart nginx ``sudo systemctl restart nginx``.
