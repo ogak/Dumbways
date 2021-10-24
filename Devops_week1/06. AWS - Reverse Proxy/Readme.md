@@ -13,7 +13,7 @@
 ![Reverse Proxy](screenshot/gambar1.jpg)
 6. Masuk ke dalam folder ``dumbplay``.
 7. Buat file konfigurasi ```nano dumbplay-config``` kemudian buat reverse proxy port 3000 ke port 80.
-![Reverse Proxy](screenshot/gambar2.jpg)
+![Reverse Proxy](screenshot/gambar2a.jpg)
 8. Kemudian include konfigurasi dumbplay tadi ke ``nginx.conf``, Save perubahan.
 ![Reverse Proxy](screenshot/gambar3.jpg)
 9. Test konfigurasi file, ``sudo nginx -t``, untuk mengecek syntax pada konfigurasi apakah sudah ok.
