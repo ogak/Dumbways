@@ -12,7 +12,7 @@
 5. Buat folder ``dumbplay`` untuk menyimpan file konfigurasi.
 ![Reverse Proxy](screenshot/gambar1.jpg)
 6. Masuk ke dalam folder ``dumbplay``.
-7. Buat file konfigurasi ```nano dumbplay-config``` kemudian buat reverse proxy port 3000 ke port 80.
+7. Buat file konfigurasi ```nano dumbplay-config``` kemudian buat aplikasi mengarah ke port 80.
 ![Reverse Proxy](screenshot/gambar2a.jpg)
 8. Kemudian include konfigurasi dumbplay tadi ke ``nginx.conf``, Save perubahan.
 ![Reverse Proxy](screenshot/gambar3.jpg)
