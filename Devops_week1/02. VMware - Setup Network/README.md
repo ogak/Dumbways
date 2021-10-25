@@ -33,6 +33,6 @@
        ```
  ![Setup ip static](screenshot/gambar4a.jpg) <br />
  6. Kemudian Save. <br />
- 7. Apply konfigurasi netplan ```sudo /etc/netplan/00-installer-config.yaml```. <br />
+ 7. Apply konfigurasi netplan ```sudo netplan apply```. <br />
  8. Check koneksi internet ketikkan perintah ```ping www.google.com -t``` . <br />
  ![Setup ip static](screenshot/gambar5a.jpg)
