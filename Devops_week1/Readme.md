@@ -1,1 +1,1 @@
-# tambahkan deskripsi,  ganti gambar git clone, ditambahkan readme dalam folder 
+# tambahkan deskripsi,  ganti gambar git clone, ditambahkan readme berisi penjelasan deskripsi dalam folder
