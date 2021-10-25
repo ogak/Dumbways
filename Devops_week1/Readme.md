@@ -4,7 +4,7 @@ Task DevOps week 1 Fundamental DevOps dan Cloud Computing.
 
 1. DevOps <br />
    adalah sebuah budaya kolaborasi antara developer dan operation yang melahirkan serangkaian praktik yang mempercepat proses development dan operasi secara otomatis, kontinyu dan terintegrasi. <br />
-   Dalam budaya DevOps pastinya perlu pemahaman atau familiar dengan Linux, karena kebanyakan server berjalan menggunakan sistem operasi linux dengan berbagai macam distro.
+   Dalam budaya DevOps pastinya perlu pemahaman atau familiar dengan Linux, karena kebanyakan server berjalan menggunakan sistem operasi linux dengan berbagai macam distro. <br />
    Pada task week ini akan dijelaskan step by step mengenai:
    - Setup virtual machine sebagai server lokal dengan OS Ubuntu Server, 
    - Setup network dalam virtual machine, 
