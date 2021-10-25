@@ -1,7 +1,5 @@
 # Task Description
 
-tambahkan deskripsi, ditambahkan readme berisi penjelasan deskripsi dalam folder
-
 Task DevOps week 1 Fundamental DevOps dan Cloud Computing.
 
 1. DevOps <br />
