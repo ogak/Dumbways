@@ -12,7 +12,7 @@ Task DevOps week 1 Fundamental DevOps dan Cloud Computing.
    - Setup network dalam virtual machine, 
    - Setup dan deploy app nodejs
    - Mengaplikasikan metode reverse proxy.
- ![Intro](01. VMware - Install Ubuntu/screenshot/intro0.jpg) <br />
+ ![Intro](intro0.jpg) <br />
 
    
 2. Cloud Computing <br />
