@@ -28,7 +28,7 @@
 1. Setelah instalasi nodejs berhasil proses berikutnya melakukan deploy application
 2. Clone apps yang sudah ready https://github.com/sgnd/dumbplay-frontend 
 3. Ketikkan perintah ```git clone https://github.com/sgnd/dumbplay-frontend```.
-![Install node js](screenshot/gambar3.jpg)
+![Install node js](screenshot/gambar4.jpg)
 
 
 ### Change directory to **frontend** and deploy the application ###
