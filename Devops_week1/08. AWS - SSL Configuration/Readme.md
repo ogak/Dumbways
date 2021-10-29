@@ -1,5 +1,4 @@
 # AWS - SSL Configuration
-d93f1719af2f503c47bbf63f603d2233f03cb
 
 ### Generate API key ###
 1. Login dan masuk ke dashboard cloudflare.
