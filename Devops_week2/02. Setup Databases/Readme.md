@@ -30,3 +30,5 @@
 5. Login ke mysql server ``sudo mysql -u root -p``.
 6. Ketik command berikut ``GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password-user';``.
 ![Setup database](screenshot/gambar2a.jpg) <br />
+7. Run backend app menggunakan pm2 ``pm2 start ecosystem.config.js``.
+![Setup database](screenshot/gambar3.jpg) <br />
