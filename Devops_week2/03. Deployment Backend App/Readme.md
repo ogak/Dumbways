@@ -26,4 +26,5 @@
 3. Install mysql2 ``npm install mysql2 -g``.
 4. Migrate database ``sequelize db:migrate`` atau ``node_modules/.bin/sequelize db:migrate``.
 ![Backend App Deployment](screenshot/gambar2c.jpg) <br />
-
+5. Run backend apps dengan pm2 ``pm2 start ecosystem.config.json``.
+![Backend App Deployment](screenshot/gambar3.jpg) <br />
