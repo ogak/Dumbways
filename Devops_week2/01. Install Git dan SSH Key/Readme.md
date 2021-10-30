@@ -11,7 +11,7 @@
 ### Buat SSH Key untuk Git ###
 1. Buat sebuah server/instance di AWS.
 2. Install git ``sudo apt install git``.
-3. Install ssh ``sudo apt install openssh-server``.
+3. Install ssh ``sudo apt install openssh-server``. <br />
 ![Git dan SSH Key](screenshot/gambar1.jpg) <br />
 
 4. Tambahkan user ke dalam config git.
