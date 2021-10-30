@@ -1,5 +1,5 @@
 # Setup Databases
-=====================================================================================
+====================================================================================================================================================================
 
 ### Buat instance baru untuk Backend ###
 1. Login ke AWS Console.
@@ -20,4 +20,12 @@
 ![Setup database](screenshot/gambar1a.jpg) <br />
 ![Setup database](screenshot/gambar1b.jpg) <br />
 
-### 
+### Database dapat terkoneksi dengan klien ###
+1. Ubah ``bind-address`` dan ``mysqlx-bind-address`` konseksi ke ip address yang dituju/ yang dibolehkan.
+2. Disini saya mencoba ubah ke ``0.0.0.0`` publik.
+![Setup database](screenshot/gambar2.jpg) <br />
+3. Save.
+4. Selanjutnya adalah grant akses host.
+5. Login ke mysql server ``sudo mysql -u root -p``.
+6. Ketik command berikut ``GRANT ALL PRIVILEGES ON *.* TO 'root'@'%' IDENTIFIED BY 'password-user';``.
+![Setup database](screenshot/gambar2a.jpg) <br />
