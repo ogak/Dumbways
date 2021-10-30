@@ -1,7 +1,7 @@
 # Custom Domain for Backend
 
 1. Login cloudflare.
-2. Pilih akun.
+2. Pilih akun ``sugandaletters@outlook.com``.
 3. Pilih domain ``onlinecamp.id``.
 4. Masuk ke menu DNS.
 5. Add record ``api.ogak.onlinecamp.id``.
