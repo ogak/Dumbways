@@ -3,7 +3,7 @@
 ![Backend App Deployment](screenshot/gambar0.jpg) <br />
 2. Buka Readme file dalam backend app.
 ![Backend App Deployment](screenshot/gambar1.jpg) <br />
-
+<br />
 3. Kemudian jalankan requirementnya.   
    - Install nodejs
    - copy .env-copy .env
