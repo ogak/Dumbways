@@ -22,9 +22,11 @@
 
 ### Database dapat terkoneksi dengan klien ###
 1. Buka folder ``/etc/mysql/mysql.conf.d``, edit file ``mysqld.cnf``.
-2. Ubah ip address ``bind-address`` dan ``mysqlx-bind-address`` ke ip address yang dituju/ yang dibolehkan.
+2. Ubah ip address ``bind-address`` ke ip address yang dituju/ yang dibolehkan.
 3. Disini saya mencoba ubah ke ``0.0.0.0`` publik.
 ![Setup database](screenshot/gambar2.jpg) <br />
+**Note: mysqlx-bind-address tidak perlu ditambahkan jika memang tidak ada, jika ditambhakan manual akan menyebabkan crash pada mysql service**
+
 3. Save.
 4. Restart mysql service ``sudo service mysql restart``.
 5. Selanjutnya adalah grant akses host.
