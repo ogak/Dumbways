@@ -9,5 +9,5 @@
 7. Aktifkan proxy.
 8. Save.
 
-![Custom domain](screenshot/gambar0.jpg) <br />
+![Custom domain](screenshot/gambar1.jpg) <br />
 
