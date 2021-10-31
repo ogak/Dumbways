@@ -2,7 +2,8 @@
 
 ### Arahkan frontend api.js ke backend app ###
 1. Login ke frontend instance.
-2. Masuk ke folder ``frontend/config``.
+2. Masuk ke folder ``frontend/config``. <br />
+
 ![SSL Config](screenshot/gambar0.jpg) <br />
 3. Edit file ``api.js`` arahkan ``baseURL: 'https://api-ogak.onlinecamp.id/api/v1``.
 ![SSL Config](screenshot/gambar1.jpg) <br />
@@ -22,5 +23,6 @@
 8. Buka website ``ogak.onlinecamp.id``.
 9. Buat akun atau registrasi untuk testing koneksi ke backend.
 ![SSL Config](screenshot/gambar4.jpg) <br />
-10. Untuk melihat koneksi backend apakah sudah https, bisa melakukan ``curl api-ogak.onlincamp.id``, atau membukanya di browser.
+10. Untuk melihat koneksi backend apakah sudah https, bisa melakukan ``curl api-ogak.onlincamp.id``, atau membukanya di browser. <br />
+
 ![SSL Config](screenshot/gambar4a.jpg) <br > 
