@@ -9,11 +9,11 @@ DumbWays merupakan bootcamp DevOps gratis dan disalurkan kerja!
 - [Baca lebih lanjut](Devops_week1/Readme.md)
 
 ## Minggu ke 2
-- Setup git & Ssh key
-- Setup database & Deploy aplikasi backend
-- [Baca lebih lanjut](week-2/README.md)
+- Setup git and SSH Key
+- Setup database and deploy backend apps
+- Setup reverse proxy for backend.
+- Setup custom domain and SSL Configuration for backend apps.
+- [Baca lebih lanjut](Devops_week2/Readme.md)
 
 ## Minggu ke 3
-- Setup docker & Membuat custom docker image
-- Setup CI/CD & Notifikasi]
-- [Baca lebih lanjut](week-3/README.md)
+
