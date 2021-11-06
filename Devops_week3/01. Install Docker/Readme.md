@@ -29,4 +29,5 @@
 2. Buka terminal, login docker menggunakan akun hub.docker yang telah dibuat tadi.
 3. ``docker login``
 4. Input username dan password.
+
 ![Install Docker](screenshot/gambar3.jpg) <br />
