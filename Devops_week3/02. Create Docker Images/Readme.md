@@ -20,12 +20,12 @@
 
     ```
 6. Simpan
-7. Buat docker image frontend app, ``docker build -t _nama-file:tag_ ``
+7. Buat docker image frontend app, ``docker build -t nama-file:tag ``
 
 ![Docker Images](screenshot/gambar2.jpg) <br />
 
-8. Buat container dari image frontend, ``docker container create --name _nama-container_ -p 8787:3000 _nama-images-app_ ``
-9. Jalankan container ``docker start _nama-container_``
+8. Buat container dari image frontend, ``docker container create --name nama-container -p 8787:3000 nama-images:tag ``
+9. Jalankan container ``docker start nama-container``
 
 ![Docker Images](screenshot/gambar3.jpg) <br />
 
