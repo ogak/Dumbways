@@ -53,3 +53,26 @@
 13. Build manual dengan klik Build Now.
 
 ![Setup jenkins](screenshot/gambar1d.jpg) <br />
+
+### Setup Webhook Github ###
+1. Login ke akun github.
+2. Masuk ke halaman settings repository
+3. Pilih Webhook
+4. Add Webhook
+5. Masukkan hostname server jenkins di Payload URL `` http://jenkins.ogak.onlinecamp.id/github-webhook/ ``
+6. Kemudian pilih event ``Just the push event``
+7. Checklist Active
+8. Simpan Add Webhook.
+
+![Setup jenkins](screenshot/gambar2.jpg) <br />
+
+### Test Webhook ###
+1. Lakukan perubahan pada repository
+2. Kemudian push
+
+![Setup jenkins](screenshot/gambar3.jpg) <br />
+
+3. Tunggu beberapa saat hingga proses build di jenkins selesai
+4. Masuk ke jenkins untuk melihat build run atau changes-nya
+
+![Setup jenkins](screenshot/gambar3a.jpg) <br />
