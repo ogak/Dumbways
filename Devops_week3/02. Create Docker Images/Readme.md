@@ -56,7 +56,7 @@
 2. Pull nodejs image sesuai dengan versi yang digunakan frontend.
 3. Masuk ke dalam folder backend.
 4. Buat docker file ``Dockerfile``
-    ``
+    ```
     FROM node:dubnium-alpine3.11
     WORKDIR /usr/src/app
     COPY package*.json ./
@@ -65,7 +65,7 @@
     EXPOSE 5000
     CMD [ "npm", "start" ]
 
-    ``
+    ```
 5. Simpan
 6. Buat docker image backend ``docker build -t image-name:tag``
 
