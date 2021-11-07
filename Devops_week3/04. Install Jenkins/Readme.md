@@ -40,3 +40,33 @@
 6. Halaman dashboard jenkins.
 
 ![Install Jenkins](screenshot/gambar1d.jpg) <br />
+
+
+### Reserve domain for jenkins ###
+1. Login akun cloudflare.
+2. Pilih akun dan domain.
+3. Masuk ke menu DNS.
+4. Reserve subdomain untuk jenkins ``jenkins.ogak.onlinecamp.id``
+5. Save. 
+
+![Install Jenkins](screenshot/gambar2.jpg) <br />
+
+### Setup Reverse Proxy for Jenkins ###
+1. Login ke server gateway
+2. Masuk ke folder nginx ``/etc/nginx/``
+3. Buat konfigurasi file ``jenkins.ogak.onlinecamp.id``.
+    ```
+    server {
+	    listen 80;
+	    server_name jenkins.ogak.onlinecamp.id;
+
+	    location / {
+		    proxy_pass http://172.31.1.147:8080;
+	    }
+    }
+
+    ```
+4. Simpan, Test ``sudo nginx -t``, restart nginx ``sudo service nginx restart``
+5. Buka browser buka arahkan ke ``jenkins.ogak.onlinecamp.id``
+
+![Install Jenkins](screenshot/gambar3.jpg) <br />
