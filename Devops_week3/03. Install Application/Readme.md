@@ -43,4 +43,4 @@
 6. Jalankan compose `` docker-compose up -d ``
 7. Container berhasil dijalankan
  
-![install app](screenshot/gambar1a.jpg) <br />
+![install app](screenshot/gambar2.jpg) <br />
