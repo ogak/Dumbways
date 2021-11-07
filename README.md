@@ -16,4 +16,9 @@ DumbWays merupakan bootcamp DevOps gratis dan disalurkan kerja!
 - [Baca lebih lanjut](Devops_week2/Readme.md)
 
 ## Minggu ke 3
-
+- Install Docker
+- Create Docker Images
+- Create container from docker images
+- Install Jenkins
+- Setup Jenkins job
+- [Baca lebih lanjut](Devops_week3/Readme.md)
