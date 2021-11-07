@@ -31,7 +31,24 @@
 
 10. Untuk memastikan tidak ada error pada images, buka browser kemudian arahkan ke ``ip-address-server:8787``.
 
-![Docker Images](screenshot/gambar4.jpg)
+![Docker Images](screenshot/gambar4.jpg) <br />
+
+11. Push image ke repository docker hub
+12. Buat repository di akun docker hub.
+
+![Docker Images](screenshot/gambar5.jpg) <br />
+
+13. Ubah nama image menjadi ``nama-user/image:tag``
+14. ``docker image tag dumbplay:3.0 ogak/dumbsound:1.0`` perintah ini akan membuat copy dari image dengan nama yang berbeda.
+
+![Docker Images](screenshot/gambar5a.jpg) <br />
+
+15. Push image ``docker push ogak/dumbsound:1.0``
+16. Tunggu hingga proses upload selesai.
+
+![Docker Images](screenshot/gambar6.jpg) <br />
+
+![Docker Images](screenshot/gambar6a.jpg) <br />
 
 
 ### Membuat docker images untuk backend dan database ###
