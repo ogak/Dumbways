@@ -21,6 +21,10 @@
 
 ![Install Docker](screenshot/gambar1.jpg) <br />
 
+7. Untuk server backend lakukan hal yang sama dari step 1 - 6.
+
+![Install Docker](screenshot/gambar1a.jpg) <br />
+
 ### Login docker hub ###
 1. Buat akun docker di ``hub.docker.com``.
 
