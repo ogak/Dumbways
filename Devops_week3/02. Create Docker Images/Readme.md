@@ -51,6 +51,36 @@
 ![Docker Images](screenshot/gambar6a.jpg) <br />
 
 
-### Membuat docker images untuk backend dan database ###
+### Membuat docker images untuk backend ###
 1. Login ke server backend
-2. 
+2. Pull nodejs image sesuai dengan versi yang digunakan frontend.
+3. Masuk ke dalam folder backend.
+4. Buat docker file ``Dockerfile``
+    ``
+    FROM node:dubnium-alpine3.11
+    WORKDIR /usr/src/app
+    COPY package*.json ./
+    RUN npm install
+    COPY . .
+    EXPOSE 5000
+    CMD [ "npm", "start" ]
+
+    ``
+5. Simpan
+6. Buat docker image backend ``docker build -t image-name:tag``
+
+![Docker Images](screenshot/gambar7.jpg) <br />
+
+7. Buat container dari image frontend, ``docker container create --name nama-container -p 5000:5000 backendsound:1.0 ``
+8. Jalankan container ``docker start nama-container``
+
+![Docker Images](screenshot/gambar7a.jpg) <br />
+
+9. Buat repository baru untuk backend.
+10. Ubah nama image menjadi ``nama-user/image:tag``
+11. ``docker image tag backend:10 ogak/backendsound:1.0`` perintah ini akan membuat copy dari image dengan nama yang berbeda.
+12. Push image ``docker push ogak/backendsound:1.0``
+
+![Docker Images](screenshot/gambar7b.jpg) <br />
+
+ 
