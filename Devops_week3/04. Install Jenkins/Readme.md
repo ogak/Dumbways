@@ -7,6 +7,11 @@
     /etc/apt/sources.list.d/jenkins.list'``
 4. Update sistem
 5. Install jenkins ``sudo apt install jenkins``
+6. Buka browser arahkan ke ``ip-address-server:8080``
 
 ![Install Jenkins](screenshot/gambar0.jpg) <br />
+
+
+### Setup Jenkins ###
+
 
