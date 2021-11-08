@@ -76,3 +76,62 @@
 4. Masuk ke jenkins untuk melihat build run atau changes-nya
 
 ![Setup jenkins](screenshot/gambar3a.jpg) <br />
+
+
+
+### Setup Slack Notification ###
+Requirements:
+- Slack workspace
+- Channel 
+
+1. Login ke jenkins server.
+2. Update jenkins ke java 11 (opsional).
+3. Install ``slack notification plugin``
+4. Masuk ke ``Manage Jenkins`` kemudian ``Manage plugin``
+5. Cari slack notification plugin kemudian install without restart
+#### Integrasi jenkins CI ke channel ####
+6. Masuk ke workspace slack
+7. Buka detail channel kemudian install dan integrasikan app jenkins ci
+
+![Setup jenkins](screenshot/gambar4.jpg) <br />
+
+![Setup jenkins](screenshot/gambar4a.jpg) <br />
+
+8. Pada Integration Settings di jenkins pastikan channel sudah benar dan copy token id.
+9. Save  
+
+![Setup jenkins](screenshot/gambar4b.jpg) <br />
+
+#### Manage jenkins notification ####
+10. Masuk ke server jenkins.
+11. Buka Manage Jenkins
+12. Pilih Configure system
+13. Scroll down cari Slack config.
+14. Masukkan nama workspace
+15. Tambahkan Credential
+16. Paste token id pada step 8 di secret field
+17. Input nama id credential
+18. Add
+
+![Setup jenkins](screenshot/gambar4c.jpg) <br />
+
+16. Pada credential masukkan Id credential yang telah ditambahkan tadi
+17. Test connection, jika sukses maka akan muncul notif di channel slack.
+
+![Setup jenkins](screenshot/gambar4d.jpg) <br />
+
+#### Setting build notification ####
+18. Pilih project jenkins
+19. Configure
+20. Pada ``Post-build Actions`` pilih notif yang akan ditampilkan pada Slack notif sesuikan dengan kebutuhan.
+
+![Setup jenkins](screenshot/gambar4e.jpg) <br />
+
+21. Buka advance pastikan workspace dan credential sudah sesuai.
+
+![Setup jenkins](screenshot/gambar4f.jpg) <br />
+
+22. Lakukan build proses app.
+23. Kemudian check channel apakah ada notification yang masuk.
+
+![Setup jenkins](screenshot/gambar4g.jpg) <br />
