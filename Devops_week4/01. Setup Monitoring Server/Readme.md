@@ -114,7 +114,7 @@
 
 ## Nonaktifkan signup grafana
 
-6. Config grafana.ini ``sudo nano /etc/grafana/grafana.ini``
+6. Edit config file grafana.ini ``sudo nano /etc/grafana/grafana.ini``
 7. Hapus disable user signup / registration dan ubah ke ``false`` pada bagian ``allow_sign_up = false``
     ``` 
     #################################### Users ###############################
