@@ -5,7 +5,7 @@
 2. Extract ``tar xvfz node_exporter-1.2.2.linux-amd64.tar.gz``
 3. Pindahkan hasil extract ke /usr/local/bin ``sudo mv node_exporter-1.2.2.linux-amd64 /usr/local/bin``
 4. Tambahkan user node_exporter ``sudo useradd -rs /bin/false node_exporter``
-5. Buat service node_exporter ``sudo nano /etc/systemd/system/node_exporter.service``
+5. Buat service node_exporter ``sudo nano /etc/systemd/system/node_exporter.service`` <br />
    Masukkan config berikut: 
    ```
     [Unit]
