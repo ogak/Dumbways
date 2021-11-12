@@ -1,4 +1,11 @@
-# Setup server
+# Setup Monitoring Server
+
+1. Login AWS console
+2. Buat instance baru
+3. Set Instance type t2.small
+4. Set 8 Gb storage
+5. Set security group
+6. Launch instance.
 
 ### Install Node Exporter di server
 1. Download node exporter ```wget https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz```
