@@ -1,6 +1,6 @@
 # Setup server
 
-### Install Node Exporter di Server yang akan di monitoring
+### Install Node Exporter di server
 1. wget https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz
 2. tar xvfz node_exporter-1.2.2.linux-amd64.tar.gz
 3. sudo mv node_exporter-1.2.2.linux-amd64 /usr/local/bin
