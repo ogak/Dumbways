@@ -71,7 +71,7 @@
 3. Setelah itu graph akan terupdate jika berhasil
 4. Beri nama pada panel kemudian simpan.
 
-![Connect multiple server to prometheus](screenshot/gambar4.jpg)
+![Connect multiple server to prometheus](screenshot/gambar4a.jpg)
 
 ### Buat panel untuk memory usage
 1. Add new panel
