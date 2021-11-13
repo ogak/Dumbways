@@ -8,7 +8,10 @@
 6. Launch instance.
 
 ### Install Node Exporter di server
-1. Download node exporter ```wget https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz```
+1. Download node exporter 
+   ```
+   wget https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz
+   ```
 2. Extract ``tar xvfz node_exporter-1.2.2.linux-amd64.tar.gz``
 3. Pindahkan hasil extract ke /usr/local/bin ``sudo mv node_exporter-1.2.2.linux-amd64 /usr/local/bin``
 4. Tambahkan user node_exporter ``sudo useradd -rs /bin/false node_exporter``
