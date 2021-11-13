@@ -71,7 +71,7 @@
 3. Setelah itu graph akan terupdate jika berhasil
 4. Beri nama pada panel kemudian simpan.
 
-![Connect multiple server to prometheus](screenshot/gambar4a.jpg)
+![Connect multiple server to prometheus](screenshot/gambar4.jpg)
 
 ### Buat panel untuk memory usage
 1. Add new panel
@@ -79,7 +79,7 @@
 3. Di bagian panel cari standart options. Pilin Unit ``bytes(SI)``
 4. Pilih graph type ``Gauge``
 
-![Connect multiple server to prometheus](screenshot/gambar4b.jpg)
+![Connect multiple server to prometheus](screenshot/gambar4d.jpg)
 
 ### Buat panel untuk Storage 
 1. Add new panel
@@ -88,7 +88,7 @@
 4. Di bagian panel cari standart options. Pilin Unit ``bytes(SI)``
 5. Pilih graph type ``Stat``
 
-![Connect multiple server to prometheus](screenshot/gambar4d.jpg)
+![Connect multiple server to prometheus](screenshot/gambar4b.jpg)
 
 ### Tampilan Dashboard
 
