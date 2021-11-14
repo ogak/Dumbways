@@ -156,7 +156,7 @@
            - containerd.io
 
        - name: Install stable release docker compose
-         shell: "sudo curl -L 'https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)' -o /usr/local/bin/docker-compose"
+         shell: sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
          args:
            executable: /bin/bash
 
@@ -171,3 +171,83 @@
 4. Tunggu hingga proses instalasi selesai
 
 
+### Ansible-Playbook Install Jenkins
+1. Buat file docker-compose.yml untuk running docker container di port 8080
+2. Masukkan kode berikut
+   ```
+   version: '3.9'
+   services:
+     jenkins:
+       image: jenkins/jenkins:lts-jdk11
+       ports:
+         - 8080:8080
+         - 50000:50000
+       privileged: true
+       user: root
+       container_name: jenkins
+       volumes:
+         - ~/jenkins:/var/jenkins_home
+         - /var/run/docker.sock:/var/run/docker.sock
+         - /usr/local/bin/docker:/usr/local/bin/docker   
+   ```
+3. Save
+4. Buat file yml untuk setup jenkinsnya ``setup-jenkins.yml``
+5. Buat task untuk melakukan copy docker-compose.yml yang telah dibuat tadi
+6. Buat task untuk eksekusi docker compose dan running daemon/background.
+7. Masukkan kode berikut:
+   ```
+   ---
+   - name: Setup CI/CD Jenkins Docker
+     hosts: 54.92.233.212
+     become: true
+     tasks:
+       - name: Copy docker compose
+         copy:
+           src: docker-jenkins/docker-compose.yml 
+           dest: /home/ubuntu/
+
+       - name: Run docker compose
+         shell: "docker-compose up -d"
+         args:
+           executable: /bin/bash
+   ```
+8. Save
+9. Execute command ``ansible-playbook setup-jenkins.yml``
+
+![Setup Server with Ansible](screenshot/gambar1c.jpg)
+
+### Ansible-Playbook setup apps
+1. Setup app dan backend dari repository
+2. Buat file yml untuk setup apps ``setup-app.yml``
+3. Buat task untuk melakukan copy apps (frontend - backend)
+4. Jalankan taks docker compose
+5. Masukkan kode berikut:
+   ```
+      ---
+   - name: Setup Frontend & Backend
+     hosts: 44.198.105.77
+     become: true
+     tasks:
+       - name: Update system
+         apt:
+           update_cache: yes
+
+       - name: Upgrade system
+         apt:
+           upgrade: dist
+
+       - name: Clone Dumplay Apps
+         shell: "git clone https://github.com/ogak/dumbplay-frontend.git dumbsound"
+         args:
+           executable: /bin/bash
+
+       - name: Clone Backend Apps
+         shell: "git clone https://github.com/ogak/dumbplay-backend.git backendsound"
+         args:
+           executable: /bin/bash
+   ```
+6. Save
+
+
+### Ansible-Playbook install node_exporter
+1. 
