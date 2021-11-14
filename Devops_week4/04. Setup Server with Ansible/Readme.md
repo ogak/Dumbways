@@ -44,3 +44,40 @@
    host_key_checking = False
    ```
 3. Save config
+
+### Ansible-Playbook Setup nginx server
+1. Buat file yml ``setup-nginx.yml``
+2. Buat task update dan upgrade system
+3. Buat task install nginx
+4. Berikut adalah yml codenya:
+   ```
+   ---
+   - name: Setup Nginx
+     hosts: 34.192.151.138
+     become: true
+     tasks:
+       - name: Update system
+         apt:
+           update_cache: yes
+       - name: Upgrade system
+         apt:
+           upgrade: dist
+
+       - name: Install Nginx
+         apt:
+           name: nginx
+           state: present
+           update_cache: yes
+   ```
+5. Save
+6. Execute perintah ansible-playbook ``ansible-playbook setup-nginx.yml``
+
+![Setup Server with Ansible](screenshot/gambar1a.jpg)
+
+7. Check nginx dengan URL
+
+![Setup Server with Ansible](screenshot/gambar1b.jpg)
+
+
+### Ansible-Playbook Setup database server
+1. 
