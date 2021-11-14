@@ -32,14 +32,47 @@
 
 ![Task4](screenshot/gambar4.jpg)
 
-### Upload Joomla ke cPanel menggunakan File Manager
-1. Masuk ke dashboard cPanel
-2. Buka File Manager
-3. Masuk ke folder htdocs
-4. Upload file Joomla yang telah di download
-5. Upload dan unzip
+### Install FileZilla
+1. Update sistem 
+2. Install filezilla ``sudo apt install -y filezilla``
+3. Buka filezilla dari aplikasi
 
 ![Task4](screenshot/gambar5.jpg)
 
-6. Tunggu hingga proses upload dan unzip selesai.
+### Upload Joomla ke cPanel menggunakan FileZilla
+1. Buka FileZilla
+2. Masukkan host, username, password dan port untuk melakukan transfer file ke hosting.
+
+![Task4](screenshot/gambar6AA.jpg)
+
+3. Setelah terkoneksi bagian remote server akan menampilkan struktur folder hosting.
+4. Upload file Joomla yang telah di download ke folder ``/htdocs``
+5. Tunggu proses upload file selesai
+
+![Task4](screenshot/gambar6b.jpg)
+
+### Installasi Joomla
+1. Setelah berhasil buka URL ``	http://ogak-task4.byethost3.com``
+2. Sebelum melakukan instalasi Hapus ``_JoomlaWj8kbnsICcMM8Sw3bt6dK.txt`` di dalam folder ``installation``
+3. Setup Joomla configuration 
+
+![Task4](screenshot/gambar7.jpg)
+
+4. Setup Database, input informasi database sesuai dengan database yang dibuat tadi
+
+![Task4](screenshot/gambar7a.jpg)
+
+5. Setup Overview kemudian Install
+
+![Task4](screenshot/gambar7b.jpg)
+
+6. Setelah instalasi selesai Joomla akan meminta untuk menghapus folder ``installation``  klik button.
+7. Buka site ``http://ogak-task4.byethost3.com/``. Joomla app sudah terdeploy
+
+![Task4](screenshot/gambar8.jpg)
+
+8. Buka database untuk mengecheck table
+
+![Task4](screenshot/gambar8a.jpg)
+
 
