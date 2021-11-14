@@ -29,3 +29,5 @@
     ```
 3. Ping hosts untuk memastikan koneksi ansible dan server berfungsi ``ansible all --key-file ~/path-to/server-aws-key.pem -i hosts -m ping``
 
+![Setup Server with Ansible](screenshot/gambar0.jpg)
+
