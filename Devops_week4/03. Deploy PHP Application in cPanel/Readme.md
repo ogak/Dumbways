@@ -49,7 +49,6 @@
 4. Upload file Joomla yang telah di download ke folder ``/htdocs``
 5. Tunggu proses upload file selesai
 
-![Task4](screenshot/gambar6b.jpg)
 
 ### Installasi Joomla
 1. Setelah berhasil buka URL ``	http://ogak-task4.byethost3.com``
@@ -75,4 +74,10 @@
 
 ![Task4](screenshot/gambar8a.jpg)
 
+### Login Joomla Administrator
+1. Buka URL http://ogak-task4.byethost3.com/administrator/
+2. Login akun administrator
 
+![Task4](screenshot/gambar8a.jpg)
+
+3. Halaman admin ini digunakan untuk mengedit halaman joomla apps.
