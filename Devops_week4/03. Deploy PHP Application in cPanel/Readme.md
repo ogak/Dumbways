@@ -78,6 +78,6 @@
 1. Buka URL http://ogak-task4.byethost3.com/administrator/
 2. Login akun administrator
 
-![Task4](screenshot/gambar8a.jpg)
+![Task4](screenshot/gambar9.jpg)
 
 3. Halaman admin ini digunakan untuk mengedit halaman joomla apps.
