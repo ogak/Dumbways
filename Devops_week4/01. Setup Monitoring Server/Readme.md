@@ -73,7 +73,7 @@
            - targets: ['44.198.105.77:9100'] #target server
   ```
 8. Add user prometheus ``sudo useradd -rs /bin/false prometheus``
-9. ``sudo chown -R prometheus: /etc/prometheus /var/lib/prometheus``
+9. ``sudo chown -R prometheus:prometheus /etc/prometheus /var/lib/prometheus``
 10. Buat service prometheus ``sudo nano /etc/systemd/system/prometheus.service``
     ```
       [Unit]
