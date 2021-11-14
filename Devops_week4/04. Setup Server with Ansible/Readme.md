@@ -1,5 +1,8 @@
 # Setup Server with Ansible
 
+### Requirements:
+- Buat repository di github untuk menyimpan file-file ansible
+
 
 ### Install Ansible in Ubuntu
 1. Konfigurasi PPA
@@ -31,3 +34,13 @@
 
 ![Setup Server with Ansible](screenshot/gambar0.jpg)
 
+### Setup Custom ansible.cfg file
+1. Buat file ``ansible.cfg`` di work directory
+2. Masukkan config berikut
+   ```
+   [defaults]
+   inventory = hosts 
+   private_key_file = ~/Downloads/server-aws-key.pem
+   host_key_checking = False
+   ```
+3. Save config
