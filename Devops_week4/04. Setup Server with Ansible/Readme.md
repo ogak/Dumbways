@@ -250,4 +250,159 @@
 
 
 ### Ansible-Playbook install node_exporter
-1. 
+1. Buat file ``node_exporter.service``
+2. Buat file yml untuk menginstall node_exporter ``setup-node-exporter.yml``
+3. Buat task-task untuk melakukan install node exporter secara berurut di semua server
+   ```
+      ---
+   - name: Setup Node exporter
+     hosts: 
+       - 34.192.151.138
+       - 44.198.105.77
+       - 52.207.158.23
+       - 54.92.233.212
+       - 204.236.226.148
+     become: true
+     tasks:
+       - name: Update system
+         apt:
+           update_cache: yes
+
+       - name: Upgrade system
+         apt:
+           upgrade: dist
+
+       - name: Download node exporter
+         shell: "wget https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz"
+         args:
+           executable: /bin/bash
+
+       - name: Extract node exporter
+         shell: "tar xvfz node_exporter-1.2.2.linux-amd64.tar.gz"
+         args:
+           executable: /bin/bash
+
+       - name: Move node exporter to /usr/local/bin
+         shell: sudo mv node_exporter-1.2.2.linux-amd64/node_exporter /usr/local/bin
+         args:
+           executable: /bin/bash
+
+       - name: Add user node exporter
+         shell: sudo useradd -rs /bin/false node_exporter
+         args:
+           executable: /bin/bash
+
+       - name: Copy node_exporter.service file
+         copy:
+           src: files/node_exporter.service 
+           dest: /etc/systemd/system/
+
+       - name: Daemon-reload
+         shell: sudo systemctl daemon-reload
+         args:
+           executable: /bin/bash
+
+       - name: Enable node exporter
+         shell: sudo systemctl enable node_exporter
+         args:
+           executable: /bin/bash
+
+       - name: Start node exporter
+         shell: sudo systemctl start node_exporter
+         args:
+           executable: /bin/bash
+   ```
+4. Save
+5. Execute ``ansible-playbook setup-node-exporter.yml``
+6. Tunggu proses selesai
+7. Check instalasi node exporter
+
+![Setup Server with Ansible](screenshot/gambar1d.jpg)
+
+### Ansible-Playbook Setup Prometheus
+1. Siapkan file-file berikut:
+   ```
+   prometheus.yml
+   prometheus.service
+   ```
+2. Buat file ansible-playbook ``setup-prometheus.yml``
+3. Buat task-task untuk instalasi prometheus, masukkan syntax berikut:
+   ```
+   ---
+   - name: Setup Node exporter
+     hosts: 204.236.226.148
+     become: true
+     tasks:
+       - name: Update system
+         apt:
+           update_cache: yes
+
+       - name: Upgrade system
+         apt:
+           upgrade: dist
+
+       - name: Downloading Prometheus
+         shell: "wget https://github.com/prometheus/prometheus/releases/download/v2.31.1/prometheus-2.31.1.linux-amd64.tar.gz"
+         args:
+           executable: /bin/bash
+
+       - name: Extracting Prometheus
+         shell: "tar xvf prometheus-2.31.1.linux-amd64.tar.gz"
+         args:
+           executable: /bin/bash
+
+       - name: Moving prometheus & promtool to /usr/local/bin
+         shell: sudo mv prometheus-2.31.1.linux-amd64/prometheus prometheus-2.31.1.linux-amd64/promtool /usr/local/bin
+         args:
+           executable: /bin/bash
+
+       - name: Mkdir prometheus
+         shell: sudo mkdir /etc/prometheus /var/lib/prometheus
+         args:
+           executable: /bin/bash
+
+       - name: Copying consoles and consoles_libraries to /etc/prometheus
+         shell: sudo mv prometheus-2.31.1.linux-amd64/consoles prometheus-2.31.1.linux-amd64/console_libraries /etc/prometheus 
+         args:
+           executable: /bin/bash
+
+       - name: Copying prometheus.yml
+         copy:
+           src: files/prometheus.yml
+           dest: /etc/prometheus/
+
+       - name: Add user prometheus
+         shell: sudo useradd -rs /bin/false prometheus
+         args:
+           executable: /bin/bash
+
+       - name: Change permission prometheus
+         shell: "sudo chown -R prometheus:prometheus /etc/prometheus /var/lib/prometheus"
+         args:
+           executable: /bin/bash
+
+       - name: Copying prometheus.service
+         copy:
+           src: files/prometheus.service
+           dest: /etc/systemd/system/
+
+       - name: Daemon-reload
+         shell: sudo systemctl daemon-reload
+         args:
+           executable: /bin/bash
+
+       - name: Enable prometheus service
+         shell: sudo systemctl enable prometheus
+         args:
+           executable: /bin/bash
+
+       - name: Start prometheus
+         shell: sudo systemctl start prometheus
+         args:
+           executable: /bin/bash
+   ```
+4. Save
+5. Execute ``ansible-playbook setup-prometheus.yml``
+6. Tunggu ansible-playbook proses selesai
+
+![Setup Server with Ansible](screenshot/gambar1e.jpg)
