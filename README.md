@@ -28,4 +28,4 @@ DumbWays merupakan bootcamp DevOps gratis dan disalurkan kerja!
 - Connect Multiple server to Prometheus + Grafana
 - Deploy application PHP with cPanel
 - Setup server with Ansible
-- [Baca lebih lanjut](Devops_week4/Readme.md)
+- [Baca lebih lanjut](https://github.com/ogak/Dumbways/tree/main/Devops_week4)
