@@ -374,7 +374,32 @@
    ```
 2. Buat file docker-compose untuk membuat container promotheus dan grafana
    ```
-   
+   version: '3.9'
+   services:
+     prometheus:
+       image: prom/prometheus:latest
+       container_name: prometheus
+       restart: unless-stopped
+       volumes:
+         - /home/ubuntu/prometheus.yml:/etc/prometheus/prometheus.yml
+       command:
+         - '--config.file=/etc/prometheus/prometheus.yml'
+         - '--storage.tsdb.path=/prometheus'
+         - '--web.console.libraries=/etc/prometheus/console_libraries'
+         - '--web.console.templates=/etc/prometheus/consoles'
+         - '--web.enable-lifecycle'
+       ports:
+         - 9090:9090
+
+     grafana:
+       image: grafana/grafana:latest-ubuntu
+       container_name: grafana
+       volumes:
+         - /home/ubuntu/grafana/data:/var/lib/grafana
+       ports:
+         - 3000:3000
+       user: "1000"
+       restart: unless-stopped
    ```
 
 3. Buat file ansible-playbook ``docker-prometheus-grafana.yml``
