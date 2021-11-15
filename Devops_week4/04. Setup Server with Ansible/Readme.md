@@ -266,38 +266,8 @@
 
        - name: Log into DockerHub
          community.docker.docker_login:
-           username: ogak
-           password: MyDockerId171
-
-       # - name: Docker build frontend step 1
-       #   shell: cd dumbsound
-       #   args:
-       #     executable: /bin/bash
-
-       # - name: Docker build frontend step 2
-       #   shell: "docker build -t ogak/dumbsound:1.1 ."
-       #   args:
-       #     executable: /bin/bash
-
-       # - name: Docker build frontend step 3
-       #   shell: cd 
-       #   args:
-       #     executable: /bin/bash
-
-       # - name: Docker build backend step 1
-       #   shell: cd backendsound
-       #   args:
-       #     executable: /bin/bash
-
-       # - name: Docker build backend step 2
-       #   shell: "docker build -t ogak/backend:1.3 ."
-       #   args:
-       #     executable: /bin/bash
-
-       # - name: Docker build backend step 3
-       #   shell: cd 
-       #   args:
-       #     executable: /bin/bash
+           username: docker_username
+           password: docker_password
 
        - name: Docker pull frontend
          shell: docker pull ogak/dumbsound:1.1
