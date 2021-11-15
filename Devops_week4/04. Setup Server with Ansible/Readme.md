@@ -2,7 +2,7 @@
 
 ### Requirements:
 - Buat repository di github untuk menyimpan file-file ansible
-
+- File-file ansible-playbook bisa dilihat disini( 
 
 ### Install Ansible in Ubuntu
 1. Konfigurasi PPA
@@ -214,7 +214,10 @@
 8. Save
 9. Execute command ``ansible-playbook setup-jenkins.yml``
 
-![Setup Server with Ansible](screenshot/gambar1c.jpg)
+![Setup Server with Ansible](screenshot/gambar1c.jpg) <br />
+
+![Setup Server with Ansible](screenshot/gambar2.jpg) <br />
+
 
 ### Ansible-Playbook setup apps
 1. Setup app dan backend dari repository
