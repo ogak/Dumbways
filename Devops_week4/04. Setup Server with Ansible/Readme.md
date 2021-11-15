@@ -249,68 +249,62 @@
 6. Save
 
 
-### Ansible-Playbook install node_exporter
-1. Buat file ``node_exporter.service``
-2. Buat file yml untuk menginstall node_exporter ``setup-node-exporter.yml``
+### Ansible-Playbook install docker node_exporter
+1. Buat file docker compose untuk instalasi docker node-exporter <br />
+   node-exporter-compose-file.yml
+   ```
+   ---
+   version: '3.9'
+
+   services:
+     node_exporter:
+       image: prom/node-exporter:latest
+       container_name: node_exporter
+       ports:
+         - 9100:9100
+       command:
+         - '--path.procfs=/host/proc'
+         - '--path.rootfs=/rootfs'
+         - '--path.sysfs=/host/sys'
+         - '--collector.filesystem.mount-points-exclude=^/(sys|proc|dev|host|etc)($$|/)'
+       restart: unless-stopped
+       volumes:
+         - /proc:/host/proc:ro
+         - /sys:/host/sys:ro
+         - /:/rootfs:ro    
+   ```
+2. Buat file yml untuk menginstall node_exporter ``docker-node-exporter.yml``
 3. Buat task-task untuk melakukan install node exporter secara berurut di semua server
    ```
-      ---
-   - name: Setup Node exporter
-     hosts: 
-       - 34.192.151.138
-       - 44.198.105.77
-       - 52.207.158.23
-       - 54.92.233.212
-       - 204.236.226.148
-     become: true
-     tasks:
-       - name: Update system
-         apt:
-           update_cache: yes
+     ---
+      - name: Installing node exporter
+        hosts: 
+          - 34.192.151.138
+          - 44.198.105.77
+          - 52.207.158.23
+          - 54.92.233.212
+          - 204.236.226.148
+        become: true
+        tasks:
+          - name: Copying docker compose file
+            copy:
+              src: docker-node-exporter
+              dest: /home/ubuntu/
 
-       - name: Upgrade system
-         apt:
-           upgrade: dist
+          - name: Stop container
+            shell: "docker stop node_exporter"
+            args:
+              executable: /bin/bash
 
-       - name: Download node exporter
-         shell: "wget https://github.com/prometheus/node_exporter/releases/download/v1.2.2/node_exporter-1.2.2.linux-amd64.tar.gz"
-         args:
-           executable: /bin/bash
+          - name: Remove container
+            shell: "docker rm node_exporter"
+            args:
+              executable: /bin/bash
 
-       - name: Extract node exporter
-         shell: "tar xvfz node_exporter-1.2.2.linux-amd64.tar.gz"
-         args:
-           executable: /bin/bash
-
-       - name: Move node exporter to /usr/local/bin
-         shell: sudo mv node_exporter-1.2.2.linux-amd64/node_exporter /usr/local/bin
-         args:
-           executable: /bin/bash
-
-       - name: Add user node exporter
-         shell: sudo useradd -rs /bin/false node_exporter
-         args:
-           executable: /bin/bash
-
-       - name: Copy node_exporter.service file
-         copy:
-           src: files/node_exporter.service 
-           dest: /etc/systemd/system/
-
-       - name: Daemon-reload
-         shell: sudo systemctl daemon-reload
-         args:
-           executable: /bin/bash
-
-       - name: Enable node exporter
-         shell: sudo systemctl enable node_exporter
-         args:
-           executable: /bin/bash
-
-       - name: Start node exporter
-         shell: sudo systemctl start node_exporter
-         args:
-           executable: /bin/bash
+          - name: Run docker compose
+            shell: 
+              cmd: "docker-compose -f docker-compose.yml up -d"
+              chdir: /home/ubuntu/docker-node-exporter/
    ```
 4. Save
 5. Execute ``ansible-playbook setup-node-exporter.yml``
@@ -319,17 +313,37 @@
 
 ![Setup Server with Ansible](screenshot/gambar1d.jpg)
 
-### Ansible-Playbook Setup Prometheus
-1. Siapkan file-file berikut:
+### Ansible-Playbook Setup docker Prometheus-Grafana
+1. Buat file config prometheus berikut:
    ```
    prometheus.yml
-   prometheus.service
+   ---
+   global:
+     scrape_interval: 10m
+
+   scrape_configs:
+     - job_name: "prometheus-metrics"
+       scrape_interval: 5m
+       static_configs:
+         - targets: ['204.236.226.148:9100']
+     - job_name: "node_exporter_metrics"
+       scrape_interval: 5m
+       scrape_timeout: 1m
+       tls_config:
+         insecure_skip_verify: true
+       static_configs:
+         - targets: ['44.198.105.77:9100','34.192.151.138:9100','52.207.158.23:9100','54.92.233.212:9100']
    ```
-2. Buat file ansible-playbook ``setup-prometheus.yml``
-3. Buat task-task untuk instalasi prometheus, masukkan syntax berikut:
+2. Buat file docker-compose untuk membuat container promotheus dan grafana
+   ```
+   
+   ```
+
+3. Buat file ansible-playbook ``docker-prometheus-grafana.yml``
+4. Buat task-task untuk instalasi container prometheus-grafana, masukkan syntax berikut:
    ```
    ---
-   - name: Setup Node exporter
+   - name: Installing Prometheus & Grafana
      hosts: 204.236.226.148
      become: true
      tasks:
@@ -341,68 +355,23 @@
          apt:
            upgrade: dist
 
-       - name: Downloading Prometheus
-         shell: "wget https://github.com/prometheus/prometheus/releases/download/v2.31.1/prometheus-2.31.1.linux-amd64.tar.gz"
-         args:
-           executable: /bin/bash
+       - name: Copying docker compose file
+         copy:
+           src: docker-prometheus-grafana
+           dest: /home/ubuntu/
 
-       - name: Extracting Prometheus
-         shell: "tar xvf prometheus-2.31.1.linux-amd64.tar.gz"
-         args:
-           executable: /bin/bash
-
-       - name: Moving prometheus & promtool to /usr/local/bin
-         shell: sudo mv prometheus-2.31.1.linux-amd64/prometheus prometheus-2.31.1.linux-amd64/promtool /usr/local/bin
-         args:
-           executable: /bin/bash
-
-       - name: Mkdir prometheus
-         shell: sudo mkdir /etc/prometheus /var/lib/prometheus
-         args:
-           executable: /bin/bash
-
-       - name: Copying consoles and consoles_libraries to /etc/prometheus
-         shell: sudo mv prometheus-2.31.1.linux-amd64/consoles prometheus-2.31.1.linux-amd64/console_libraries /etc/prometheus 
-         args:
-           executable: /bin/bash
-
-       - name: Copying prometheus.yml
+       - name: Copying prometheus.yml file
          copy:
            src: files/prometheus.yml
-           dest: /etc/prometheus/
+           dest: /home/ubuntu/
 
-       - name: Add user prometheus
-         shell: sudo useradd -rs /bin/false prometheus
-         args:
-           executable: /bin/bash
-
-       - name: Change permission prometheus
-         shell: "sudo chown -R prometheus:prometheus /etc/prometheus /var/lib/prometheus"
-         args:
-           executable: /bin/bash
-
-       - name: Copying prometheus.service
-         copy:
-           src: files/prometheus.service
-           dest: /etc/systemd/system/
-
-       - name: Daemon-reload
-         shell: sudo systemctl daemon-reload
-         args:
-           executable: /bin/bash
-
-       - name: Enable prometheus service
-         shell: sudo systemctl enable prometheus
-         args:
-           executable: /bin/bash
-
-       - name: Start prometheus
-         shell: sudo systemctl start prometheus
-         args:
-           executable: /bin/bash
+       - name: Run compose up 
+         shell:
+           cmd: "docker-compose -f docker-compose.yml up -d"
+           chdir: /home/ubuntu/docker-prometheus-grafana/
    ```
 4. Save
-5. Execute ``ansible-playbook setup-prometheus.yml``
+5. Execute ``ansible-playbook docker-prometheus-grafana.yml``
 6. Tunggu ansible-playbook proses selesai
 
 ![Setup Server with Ansible](screenshot/gambar1e.jpg)
