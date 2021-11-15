@@ -2,7 +2,7 @@
 
 ### Requirements:
 - Buat repository di github untuk menyimpan file-file ansible
-- File-file ansible-playbook bisa dilihat disini( 
+- File-file ansible-playbook bisa [dilihat disini](https://github.com/ogak/dumbways-ansible) 
 
 ### Install Ansible in Ubuntu
 1. Konfigurasi PPA
