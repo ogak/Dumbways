@@ -173,6 +173,6 @@
 5. Restart nginx
 6. Buka browser akses ``monitoring.ogak.onlinecamp.id``
 
-![Setup Monitoring Server](screenshot/gambar7.jpg) <br />
+![Setup Monitoring Server](screenshot/gambar9.jpg) <br />
   
 
