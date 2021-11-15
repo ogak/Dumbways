@@ -171,7 +171,7 @@
 4. Tunggu hingga proses instalasi selesai
 
 
-### Ansible-Playbook Install Jenkins
+### Ansible-Playbook Install docker Jenkins
 1. Buat file docker-compose.yml untuk running docker container di port 8080
 2. Masukkan kode berikut
    ```
@@ -223,7 +223,7 @@
 4. Jalankan taks docker compose
 5. Masukkan kode berikut:
    ```
-      ---
+     ---
    - name: Setup Frontend & Backend
      hosts: 44.198.105.77
      become: true
@@ -236,6 +236,11 @@
          apt:
            upgrade: dist
 
+       - name: Remove current apps
+         shell: "sudo rm -r backendsound dumbsound"
+         args:
+           executable: /bin/bash
+
        - name: Clone Dumplay Apps
          shell: "git clone https://github.com/ogak/dumbplay-frontend.git dumbsound"
          args:
@@ -245,6 +250,66 @@
          shell: "git clone https://github.com/ogak/dumbplay-backend.git backendsound"
          args:
            executable: /bin/bash
+
+       - name: Install python-pip
+         apt:
+           name: python-pip
+           state: present
+
+       - name: Pip install docker
+         shell: pip install docker
+         args:
+           executable: /bin/bash
+
+       - name: Log into DockerHub
+         community.docker.docker_login:
+           username: ogak
+           password: MyDockerId171
+
+       # - name: Docker build frontend step 1
+       #   shell: cd dumbsound
+       #   args:
+       #     executable: /bin/bash
+
+       # - name: Docker build frontend step 2
+       #   shell: "docker build -t ogak/dumbsound:1.1 ."
+       #   args:
+       #     executable: /bin/bash
+
+       # - name: Docker build frontend step 3
+       #   shell: cd 
+       #   args:
+       #     executable: /bin/bash
+
+       # - name: Docker build backend step 1
+       #   shell: cd backendsound
+       #   args:
+       #     executable: /bin/bash
+
+       # - name: Docker build backend step 2
+       #   shell: "docker build -t ogak/backend:1.3 ."
+       #   args:
+       #     executable: /bin/bash
+
+       # - name: Docker build backend step 3
+       #   shell: cd 
+       #   args:
+       #     executable: /bin/bash
+
+       - name: Docker pull frontend
+         shell: docker pull ogak/dumbsound:1.1
+         args:
+           executable: /bin/bash
+
+       - name: Docker pull backend
+         shell: docker pull ogak/backendsound:1.3
+         args:
+           executable: /bin/bash
+
+       - name: Install Dumbplay apps (Dumbsound)
+         shell:
+           cmd: "docker-compose -f docker-compose.yml up -d" 
+           chdir: /home/ubuntu/dumbsound/
    ```
 6. Save
 
@@ -342,7 +407,7 @@
 3. Buat file ansible-playbook ``docker-prometheus-grafana.yml``
 4. Buat task-task untuk instalasi container prometheus-grafana, masukkan syntax berikut:
    ```
-   ---
+     ---
    - name: Installing Prometheus & Grafana
      hosts: 204.236.226.148
      become: true
@@ -369,9 +434,16 @@
          shell:
            cmd: "docker-compose -f docker-compose.yml up -d"
            chdir: /home/ubuntu/docker-prometheus-grafana/
+
+       - name: Change grafana folder permission
+         shell: "sudo chown 1000:1000 grafana/data/"
+         args:
+           executable: /bin/bash   
    ```
 4. Save
 5. Execute ``ansible-playbook docker-prometheus-grafana.yml``
 6. Tunggu ansible-playbook proses selesai
 
-![Setup Server with Ansible](screenshot/gambar1e.jpg)
+![Setup Server with Ansible](screenshot/gambar1e.jpg) <br />
+
+![Setup Server with Ansible](screenshot/gambar1f.jpg) <br />
