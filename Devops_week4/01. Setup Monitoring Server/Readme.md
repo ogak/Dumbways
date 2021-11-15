@@ -144,7 +144,7 @@
 11. Restart service grafana ``sudo systemctl restart grafana-server.service``
 12. Akses ip server monitor melalui port 3000 
 
-![Setup Monitoring Server](screenshot/gambar6.jpg) <br />
+![Setup Monitoring Server](screenshot/gambar7.jpg) <br />
 
 13. Kemudian login dengan user dan pass default ``admin``
 14. Setup password baru. 
@@ -153,7 +153,7 @@
 
 1. Buat subdomain ``monitoring.ogak.onlinecamp.id``dan arahkan ke ip server gateway.
 
-![Setup Monitoring Server](screenshot/gambar7.jpg) <br />
+![Setup Monitoring Server](screenshot/gambar8.jpg) <br />
 
 2. Login ke server gateway
 3. Tambahkan config untuk subdomain monitoring di folder conf.
