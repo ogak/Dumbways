@@ -449,4 +449,8 @@
 
 ![Setup Server with Ansible](screenshot/gambar1e.jpg) <br />
 
+
+![Setup Server with Ansible](screenshot/gambar1f.jpg) <br />
+
+
 ![Setup Server with Ansible](screenshot/gambar1f.jpg) <br />
