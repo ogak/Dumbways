@@ -453,4 +453,4 @@
 ![Setup Server with Ansible](screenshot/gambar1f.jpg) <br />
 
 
-![Setup Server with Ansible](screenshot/gambar1f.jpg) <br />
+![Setup Server with Ansible](screenshot/gambar1g.jpg) <br />
