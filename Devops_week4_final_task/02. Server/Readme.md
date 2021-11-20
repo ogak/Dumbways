@@ -60,3 +60,4 @@
 ![02](screenshot/gambar3b.jpg) <br />
 
 5. Save
+6. Test konfig ``sudo nginx -t``
