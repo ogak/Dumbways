@@ -14,6 +14,8 @@
 
 ![04](screenshot/gambar2.jpg)
 
+8. Login ssh ke server ``ssh -i path/to/aws-key.pm ogak@ip_or_hostname``
+
 ### SSH Key for access the git without username & password
 1. Generate SSH key ``ssh-keygen -t rsa -C "ogak@dumbways"
 2. Add ssh key yang telah dibuat ``ssh-add ~/.ssh/id_rsa``
