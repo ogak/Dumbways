@@ -96,3 +96,91 @@
 8. Jalankan ansible-playbook ``ansible-playbook create_users.yml``
 
 ![03](screenshot/gambar1.jpg) <br />
+
+### Setup server - Install docker & docker compose di semua server
+
+1. Buat file YAML ``setup-docker.yml``
+   ```
+    ---
+    - name: Setup Docker & Docker Compose
+      hosts: all
+      become: true
+      vars_files:
+        - vars/create_user_vars.yml
+      tasks:
+        - name: Update system
+          apt:
+            update_cache: yes
+
+        - name: Upgrade system
+          apt:
+            upgrade: dist
+
+        - name: Setup repository
+          shell: "sudo apt-get install ca-certificates curl gnupg lsb-release"
+          args:
+            executable: /bin/bash
+
+        - name: Add docker GPG key
+          apt_key:
+            url: https://download.docker.com/linux/ubuntu/gpg
+            state: present
+
+        - name: Add docker repository
+          apt_repository:
+            repo: deb https://download.docker.com/linux/ubuntu focal stable
+            state: present
+
+        - name: Update system
+          apt:
+            update_cache: yes
+
+        - name: Install docker engine
+          apt:
+            name: "{{item}}"
+            state: latest
+            update_cache: yes
+          loop:
+            - docker-ce
+            - docker-ce-cli
+            - containerd.io
+
+        - name: Install stable release docker compose
+          shell: sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+          args:
+            executable: /bin/bash
+
+
+        - name: Apply executable permission to the binary
+          shell: "sudo chmod +x /usr/local/bin/docker-compose"
+          args:
+            executable: /bin/bash
+
+        - name: Remove sudo on docker command
+          shell: sudo usermod -aG docker {{username}}
+          args:
+            executable: /bin/bash
+   ```
+
+2. Save.
+3. Edit ``hosts`` file, tambahkan:
+   ```
+   [all]
+    34.192.151.138 ansible_user=ogak ansible_sudo_password=$6$mQiiy0KdrD5sh/7$zNk4uwT8mXRNQ1bCbYR4ZL4wiX7APTVvuaOpOLEeAYsNGmmzqDSzmACvu2GRKsGf5wA6.xiMyRZ6rGKlvL.PU/
+    #apps
+    44.198.105.77 ansible_user=ogak ansible_sudo_password=$6$mQiiy0KdrD5sh/7$zNk4uwT8mXRNQ1bCbYR4ZL4wiX7APTVvuaOpOLEeAYsNGmmzqDSzmACvu2GRKsGf5wA6.xiMyRZ6rGKlvL.PU/
+    #db
+    52.207.158.23 ansible_user=ogak ansible_sudo_password=$6$mQiiy0KdrD5sh/7$zNk4uwT8mXRNQ1bCbYR4ZL4wiX7APTVvuaOpOLEeAYsNGmmzqDSzmACvu2GRKsGf5wA6.xiMyRZ6rGKlvL.PU/
+    #CI/CD
+    54.92.233.212 ansible_user=ogak ansible_sudo_password=$6$mQiiy0KdrD5sh/7$zNk4uwT8mXRNQ1bCbYR4ZL4wiX7APTVvuaOpOLEeAYsNGmmzqDSzmACvu2GRKsGf5wA6.xiMyRZ6rGKlvL.PU/
+    #Monitoring
+    204.236.226.148 ansible_user=ogak ansible_sudo_password=$6$mQiiy0KdrD5sh/7$zNk4uwT8mXRNQ1bCbYR4ZL4wiX7APTVvuaOpOLEeAYsNGmmzqDSzmACvu2GRKsGf5wA6.xiMyRZ6rGKlvL.PU/
+   ```
+4. Isi ansible_sudo_password dengan password login server yang telah di enkrip menggunakan mkpasswd 
+5. Save
+6. Run ``ansible-playbook setup-docker.yml``
+7. Masukkan password
+8. Tunggu proses otomatis ansible selesai
+
+![03](screenshot/gambar1a.jpg) <br />
+  
