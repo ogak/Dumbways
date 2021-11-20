@@ -30,7 +30,7 @@
 ![01](screenshot/gambar1d.jpg) <br />
 
 
-![01](screenshot/gambar1d.jpg) <br />
+![01](screenshot/gambar1e.jpg) <br />
 
 
 ### Clone Housy backend repository
