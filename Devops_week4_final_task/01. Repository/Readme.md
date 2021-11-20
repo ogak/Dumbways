@@ -15,7 +15,7 @@
    git push -u origin main
    ```
 
-![01](screenshot/gambar1b.jgp) <br />
+![01](screenshot/gambar1b.jpg) <br />
 
 6. Buat branch ``development``
 7. ``git checkout -b development``
@@ -48,7 +48,7 @@
    git push -u origin main
    ```
 
-![01](screenshot/gambar2b.jgp) <br />
+![01](screenshot/gambar2b.jpg) <br />
 
 6. Buat branch ``development``
 7. ``git checkout -b development``
