@@ -45,3 +45,18 @@
 4. Security group
 
 ![02](screenshot/gambar2c.jpg) <br />
+
+
+### Setup Load balance untuk apps frontend dan backend
+1. Login Webserver instance
+2. Masuk ke /etc/nginx
+3. Edit file config app frontend
+
+![02](screenshot/gambar3a.jpg) <br />
+
+3. Save
+4. Edit file config app backend
+
+![02](screenshot/gambar3b.jpg) <br />
+
+5. Save
