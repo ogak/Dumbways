@@ -101,3 +101,12 @@
 5. Test connection
 
 ![08](screenshot/gambar6c.jpg) <br />
+
+
+### Setup Post-Build Actions
+1. Masuk ke jenkins job
+2. Configure
+3. Tambahkan Post-Build Actions
+4. Pilih Slack Notifications
+
+![08](screenshot/gambar7.jpg) <br />
