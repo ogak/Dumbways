@@ -60,7 +60,8 @@
       }
     }
    ```
-9. Simpan
+9.Simpan.
+
 10.Buat config prometheus ``prometheus.ogak.onlinecamp.id``
    ```
    server {
