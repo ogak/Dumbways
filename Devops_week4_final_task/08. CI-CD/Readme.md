@@ -72,4 +72,32 @@
 ![08](screenshot/gambar5a.jpg) <br />
 
 
+### Setup GitHub Webhook
+1. Login akun github
+2. Buka repository frontend app
+3. Settings
+4. Masuk ke ``Webhook``
+5. Tambahkan ``http://jenkins.ogak.onlinecamp.id/github-webhook/`` di PayloadUrl
 
+![08](screenshot/gambar5b.jpg) <br />
+
+6. Simpan
+7. Lakukan hal yang sama pada repository backend app
+
+### Setup Slack Notification
+1. Buat workspace baru
+2. Integrasi app jenkins ci di channel
+
+![08](screenshot/gambar6.jpg) <br />
+
+3. Setup Credentials menggunakan secret text, dan masukkan token dari jenkins ci slack
+
+![08](screenshot/gambar6a.jpg) <br />
+
+4. Konfiguras slack notification di dalam Configure System 
+
+![08](screenshot/gambar6b.jpg) <br />
+
+5. Test connection
+
+![08](screenshot/gambar6c.jpg) <br />
