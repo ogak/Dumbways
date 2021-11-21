@@ -110,3 +110,5 @@
 4. Pilih Slack Notifications
 
 ![08](screenshot/gambar7.jpg) <br />
+
+![08](screenshot/gambar8.jpg) <br />
