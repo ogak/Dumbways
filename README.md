@@ -29,3 +29,15 @@ DumbWays merupakan bootcamp DevOps gratis dan disalurkan kerja!
 - Deploy application PHP with cPanel
 - Setup server with Ansible
 - [Baca lebih lanjut](https://github.com/ogak/Dumbways/tree/main/Devops_week4)
+
+## Minggu ke 5 Final Task
+- Setup Repository
+- Setup AWS Server
+- Create User di AWS Server
+- Create SSH Key dan untuk Github
+- Setup server database
+- Deploy apps
+- Setup CI/CD Jenkins
+- Setup Monitoring (Prometheus-Grafana)
+- Setup basic auth prometheus
+- ![Baca lebih lanjut](https://github.com/ogak/Dumbways/tree/main/Devops_week_final_task)
