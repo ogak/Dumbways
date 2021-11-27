@@ -2,6 +2,9 @@
 
 Pada task ini akan di deploy sebuah app microservice (todo app) menggunakan docker swarm.
 
+![Additional_task](screenshot/additional-task.jpg) <br />
+
+
 ### Buat Instance d AWS
 - Login ke aws dan buat instance sebagai berikut:
   - T2.Medium
