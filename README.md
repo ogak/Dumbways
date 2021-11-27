@@ -41,3 +41,8 @@ DumbWays merupakan bootcamp DevOps gratis dan disalurkan kerja!
 - Setup Monitoring (Prometheus-Grafana)
 - Setup basic auth prometheus
 - [Baca lebih lanjut](https://github.com/ogak/Dumbways/tree/main/Devops_week_final_task)
+
+## Minggu ke 6 Additional Task
+- Docker Swarm
+- Microservices
+- [Baca lebih lanjut](https://github.com/ogak/Dumbways/tree/main/Devops_AdditionalTask)
